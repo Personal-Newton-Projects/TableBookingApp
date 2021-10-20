@@ -1,0 +1,15 @@
+﻿@page
+@model TableBooking.Pages.BooktablesModel
+@{
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="number">Table Number</label>
+        <input type="text" class="form-control" asp-for="@Model.TableNumber" readonly placeholder="@Model.TableNumber">
+        <span asp-validation-for="@Model.TableNumber"></span>
+        <small id="tableNumber" class="form-text text-muted">Table you are booking</small>
+    </div>
+    <button type="submit" class="btn btn-secondary">Unbook</button>
+</form>

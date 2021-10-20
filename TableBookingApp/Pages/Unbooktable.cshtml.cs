@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -11,18 +12,18 @@ namespace TableBooking.Pages
     public class BooktablesModel : PageModel
     {
         [BindProperty]
+        [Required]
         public int TableNumber { get; set; }
-        [BindProperty]
-        public string FirstName { get; set; }
-        [BindProperty]
-        public int Seats { get; set; }
 
-        public void OnGet()
+        public static string Message { get; set; }
+
+        public void OnGet(int number)
         {
+            TableNumber = number;
         }
-        public void OnPost()
+        public ActionResult OnPost()
         {
-            TableManager.BookTable(TableNumber, FirstName, Seats);
+            Message = TableManager.UnbookTable(TableNumber);
+            return RedirectToPage("/ViewTables");
         }
     }
-}
