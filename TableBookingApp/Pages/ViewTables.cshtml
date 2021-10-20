@@ -1,0 +1,35 @@
+﻿@page
+@model TableBooking.Pages.ViewTablesModel
+@{
+}
+
+<h1>All Tables</h1>
+<hr />
+<p class="alert-warning">@Model.Message</p>
+@foreach (var table in TableBooking.Data.TableManager.Tables)
+{
+    <div style="display:inline-block;">
+        <div class="card" style="width: 18rem; ">
+            <div class="card-body">
+                <h5 class="card-title">Table #@table.Number</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Table booked by: @table.Name</h6>
+                <p class="card-text">@table.SeatsOccupied / @table.Seats seats</p>
+                @if (table.SeatsOccupied < table.Seats && !table.Booked)
+                {
+                    <a asp-page="/BookTable" asp-route-number="@table.Number" class="card-link" asp>Book this table</a>
+                }
+
+                @if (table.Booked)
+                {
+                    <a asp-page="/UnBookTable" asp-route-number="@table.Number" class="card-link" asp>Unbook this table</a>
+
+                }
+            </div>
+        </div>
+    </div>
+}
+<div class="text-center" style="margin-top:5%; margin-bottom:2%">
+    <a asp-page="/ViewTables" asp-route-add="true" class="btn btn-success">Add a Table</a>
+    <a asp-page="/ViewTables" asp-route-remove="true" class="btn btn-danger">Remove a table</a>
+</div>
+

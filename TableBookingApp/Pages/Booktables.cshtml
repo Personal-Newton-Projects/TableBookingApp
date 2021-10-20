@@ -1,0 +1,24 @@
+﻿@page
+@model TableBooking.Pages.BooktablesModel
+@{
+}
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="number">Table Number</label>
+        <input type="text" class="form-control" asp-for="@Model.TableNumber" placeholder="Enter table to book">
+        <small id="tableNumber" class="form-text text-muted">Book table 1-8</small>
+    </div>
+    <div class="form-group">
+        <label for="number">Who is booking?</label>
+        <input type="text" class="form-control" asp-for="@Model.FirstName" placeholder="Enter First Name">
+        <small id="firstName" class="form-text text-muted">Your First name.</small>
+    </div>
+    <div class="form-group">
+        <label for="seats">How many seat?s</label>
+        <input type="text" class="form-control" asp-for="@Model.Seats" placeholder="Enter the amount of seats to book">
+        <small id="seats" class="form-text text-muted">Make sure to check how many seats there are per table!!!!</small>
+    </div>
+    <button type="submit" class="btn btn-secondary">Book</button>
+</form>
