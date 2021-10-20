@@ -9,7 +9,7 @@ using TableBooking.Data;
 
 namespace TableBooking.Pages
 {
-    public class BooktablesModel : PageModel
+    public class UnbookooktablesModel : PageModel
     {
         [BindProperty]
         [Required]
@@ -27,3 +27,4 @@ namespace TableBooking.Pages
             return RedirectToPage("/ViewTables");
         }
     }
+}
