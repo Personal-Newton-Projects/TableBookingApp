@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableBooking", "TableBooking\TableBooking.csproj", "{46CC7E80-C685-49AB-899A-4552E56CDB0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableBookingApp", "TableBookingApp\TableBookingApp.csproj", "{46CC7E80-C685-49AB-899A-4552E56CDB0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
