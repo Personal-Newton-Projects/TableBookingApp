@@ -18,10 +18,16 @@
         <small id="firstName" class="form-text text-muted">Your First name.</small>
     </div>
     <div class="form-group">
-        <label for="seats">How many seat?s</label>
+        <label for="seats">How many seats?</label>
         <input type="text" class="form-control" asp-for="@Model.Seats" placeholder="Enter the amount of seats to book">
         <span asp-validation-for="@Model.Seats"></span>
         <small id="seats" class="form-text text-muted">Make sure to check how many seats there are per table!!!!</small>
+    </div>
+    <div class="form-group">
+        <label for="time">At what time?</label>
+        <input type="datetime" class="form-control" asp-for="@Model.Time" placeholder="Enter the Date to book the table at">
+        <span asp-validation-for="@Model.Time"></span>
+        <small id="time" class="form-text text-muted">Double check the hour</small>
     </div>
     <button type="submit" class="btn btn-secondary">Book</button>
 </form>

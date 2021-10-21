@@ -12,5 +12,6 @@ namespace TableBooking.Models
 		public int Seats { get; set; }
 		public int SeatsOccupied { get; set; }
 		public bool Booked { get; set; }
+		public DateTime Time { get; set; }
 	}
 }

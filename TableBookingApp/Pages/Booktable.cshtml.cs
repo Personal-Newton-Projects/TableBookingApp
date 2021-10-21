@@ -21,6 +21,8 @@ namespace TableBooking.Pages
         [Required]
         public int Seats { get; set; }
 
+        public DateTime Time { get; set; }
+
         public static string Message { get; set; }
 
         public void OnGet(int number)
@@ -29,7 +31,7 @@ namespace TableBooking.Pages
         }
         public ActionResult OnPost()
         {
-            Message = TableManager.BookTable(TableNumber, FirstName, Seats);
+            Message = TableManager.BookTable(TableNumber, FirstName, Seats, Time);
             return RedirectToPage("/ViewTables");
         }
     }

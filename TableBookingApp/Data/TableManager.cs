@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TableBooking.Models;
 
@@ -61,7 +62,7 @@ namespace TableBooking.Data
 			return Tables;
 		} // Return list of tables
 
-		public static string BookTable(int number, string name, int requestedSeats)
+		public static string BookTable(int number, string name, int requestedSeats, DateTime time)
 		{
 			TableModel table = Tables.Where(table => table.Number == number).FirstOrDefault();
 
@@ -83,6 +84,7 @@ namespace TableBooking.Data
 					Tables[index].Name = name;
 					Tables[index].SeatsOccupied = requestedSeats;
 					Tables[index].Booked = true;
+					Tables[index].Time = time;
 
 					return "Table successfully booked!";
 				}
@@ -102,6 +104,7 @@ namespace TableBooking.Data
 				table.Name = string.Empty;
 				table.SeatsOccupied = 0;
 				table.Booked = false;
+				table.Time = System.DateTime.Now;
 
 				return "Table successfully unbooked!";
 			}

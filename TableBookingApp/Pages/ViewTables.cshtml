@@ -13,6 +13,17 @@
             <div class="card-body">
                 <h5 class="card-title">Table #@table.Number</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Table booked by: @table.Name</h6>
+                @{
+                    if (table.Time.Hour > DateTime.Now.Hour)
+                    {
+                        <h6 class="card-subtitle mb-2 text-muted">Table booked at: @table.Time.Hour</h6>
+
+                    }
+                    else
+                    {
+                        <h6 class="card-subtitle mb-2 text-muted">Table not booked</h6>
+                    }
+                }
                 <p class="card-text">@table.SeatsOccupied / @table.Seats seats</p>
                 @if (table.SeatsOccupied < table.Seats && !table.Booked)
                 {
