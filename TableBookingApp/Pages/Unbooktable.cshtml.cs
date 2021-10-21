@@ -17,9 +17,11 @@ namespace TableBooking.Pages
 
         public static string Message { get; set; }
 
+
         public void OnGet(int number)
         {
             TableNumber = number;
+
         }
         public ActionResult OnPost()
         {
