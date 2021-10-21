@@ -95,18 +95,13 @@ namespace TableBooking.Data
 
 		public static string UnbookTable(int number)
 		{
-			TableModel table = Tables.Where(table => table.Number == number).FirstOrDefault();
+			TableModel table = Tables[number-1]; //Decrease by 1 to match Tables index-number matching.
 
 			if (table != null) // Check if table exists
 			{
-				int index = Tables.FindIndex(table => table.Number == number);
-
-				Tables[index] = new TableModel()
-				{
-					Number = table.Number,
-					SeatsOccupied = 0,
-					Booked = false
-				};
+				table.Name = string.Empty;
+				table.SeatsOccupied = 0;
+				table.Booked = false;
 
 				return "Table successfully unbooked!";
 			}
